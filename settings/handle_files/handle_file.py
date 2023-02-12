@@ -29,7 +29,9 @@ class Handle_files:
             
             if os.path.isdir(f'{out_path}/encrypted'):
                 os.rmdir(f'{out_path}/encrypted')
-                    
+
+        return sys.stdout.write('\n')         
+
         
     def get_decrypt_file(self, path_to_folders:str, out_path:str, password:str):  
 
@@ -49,7 +51,8 @@ class Handle_files:
 
             if os.path.isdir(f'{out_path}/decrypted'):
                 os.rmdir(f'{out_path}/decrypted')
-            
+                
+        return sys.stdout.write('\n')  
         
     def encrypt_zip_file(self, in_file:str, out_file:str, password:str):
         key = sha256(str.encode(password)).digest()
