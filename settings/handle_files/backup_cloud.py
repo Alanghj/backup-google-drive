@@ -74,7 +74,7 @@ class Upload_cloud:
                 media_upload = MediaFileUpload(f'{upload_folder}/{file}', chunksize=1024 * 1024, resumable=True) 
                 service.files().create(body=file_settings, media_body=media_upload, fields='id').execute()
             
-            return file
+            return sys.stdout.write('\n')
 
         for value in items:
             validation_file.append(value['name'])
@@ -95,6 +95,8 @@ class Upload_cloud:
                     break
                 except Exception as err:
                     print(f'Failed to upload {file_name}: {err}')
+                    
+        return sys.stdout.write('\n')
                     
 
     def download_cloud(self, download_folder:str, out_path:str):
@@ -133,3 +135,5 @@ class Upload_cloud:
             with open(os.path.join(f'{out_path}/{download_folder}/{file_name}'), 'wb') as file:
                 file.write(file_han.read())
                 file.close()
+        
+        return sys.stdout.write('\n')
