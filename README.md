@@ -103,5 +103,5 @@ python3 run.py -c -df path/folder/to/cloud -o output/folder/of/cloud
     </tr>
 </table>
 <h4 align="center">
-   Made by <a href="/" target="#"> Alanghj</a>
+   Made by <a href="https://github.com/Alanghj" target="#"> Alanghj</a>
 </h4>
