@@ -7,8 +7,8 @@
 ### Google Drive Documentation
   https://developers.google.com/drive/api/quickstart/python?hl=en
   
-### Youtube video
-  if you still need help to get the api key :
+  
+### If you still need help to get the api key:
   https://www.youtube.com/watch?v=fkWM7A-MxR0&t=661s&ab_channel=NeuralNine
     
 
@@ -89,7 +89,6 @@ python3 run.py -c -df path/folder/to/cloud -o output/folder/of/cloud
 
 
 ## :mortar_board: Author
-
 
 
 <table align="center">
