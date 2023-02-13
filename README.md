@@ -1,38 +1,85 @@
-# Brute Force
+# Backup-app-google-driver
 
 ## Overview
-* A brute-force application to get credentials of user and password in a website.
+* A Backup application to upload files with encryption to the google drive.
 
-### Run locally
-Install dependencies, virtual environment is recommended.
+## Get Google Drive API
+  https://developers.google.com/drive/api/quickstart/python?hl=en
+  
+  if you still need help to get the api key :
+  https://www.youtube.com/watch?v=fkWM7A-MxR0&t=661s&ab_channel=NeuralNine
+    
 
-#### Virtual environment in linux
+## Run locally
+Install dependencies in a virtual environment is recommended.
+
+### Virtual environment and Libraries in Linux/Windows:
 
 ```python 
-python3 -m venv env
-source ./env/bin/activate
-deactivate
+Linux:
+  python3 -m venv env
+  source ./env/bin/activate
+  pip3 install -r requirements.txt
+  deactivate
+  
+Windows:
+  python3 -m venv env
+  .\env\Scripts\activate
+  pip3 install -r requirements.txt
+  deactivate
+```
+## Usage:
+
+```shell
+Usage: run.py [-h] [-e] [-d] [-c] [-f FOLDER] [-p PASSWORD] [-o OUTPUT] [-uf UPLOAD_FOLDER] [-fn FOLDER_NAME] [-df DOWNLOAD_FOLDER]
+
+Application of file Encryption and Decryption with inbuilt upload to the cloud
+
+options:
+  -h, --help            show this help message and exit
+
+Folder-Options:
+  -e, --encryption      enable status for encryption of files
+  -d, --decryption      enable status for decryption of files
+  -c, --cloud           Enable upload files to the Cloud
+
+Folder-path/key:
+  -f FOLDER, --folder FOLDER
+                        Path to the directory
+  -p PASSWORD, --password PASSWORD
+                        Password for symmetric encryption of files
+  -o OUTPUT, --output OUTPUT
+                        output the files to a chosen path
+
+Cloud-Settings:
+  -uf UPLOAD_FOLDER, --upload_folder UPLOAD_FOLDER
+                        Path to the folder to upload to the cloud
+  -fn FOLDER_NAME, --folder_name FOLDER_NAME
+                        folder name to upload to cloud
+  -df DOWNLOAD_FOLDER, --download_folder DOWNLOAD_FOLDER
+                        Path to download folder in the cloud
 ```
 
-#### Virtual environment in windows
 
-```python 
-python3 -m venv env
-.\env\Scripts\activate
-deactivate
+## Example commands
+
+### Encrypt files to be uploaded
 ```
-
-#### Install the libraries
-```python
-pip install -r requirements.txt
+python3 run.py -e -f path/to/folder -p Mypassword -o out/put/folder
 ```
+### Decrypt files encrypted
+```
+python3 run.py -d -f path/to/folder -p Mypassword -o out/put/folder
+```
+### Upload files to the cloud
+```
+python3 run.py -c -uf path/to/folder -fn MyfolderName
+```
+### Downloads files from the cloud
 
-
-### How to run:
-* `Git clone https://github.com/Alanghj/Brute-Force-app.git`. 
-* You will see the analysis in: `python3 run.py`.
-* Do no forget to Install the `requirements.txt`.
-
+```
+python3 run.py -c -df path/folder/to/cloud -o output/folder/of/cloud
+```
 
 ## License
 
@@ -41,53 +88,7 @@ pip install -r requirements.txt
 
 ## :mortar_board: Author
 
-```shell
-Fast web spider written in Go - v1.1.5 by @thebl4ckturtle & @j3ssiejjj
 
-Usage:
-  gospider [flags]
-
-Flags:
-  -s, --site string               Site to crawl
-  -S, --sites string              Site list to crawl
-  -p, --proxy string              Proxy (Ex: http://127.0.0.1:8080)
-  -o, --output string             Output folder
-  -u, --user-agent string         User Agent to use
-                                  	web: random web user-agent
-                                  	mobi: random mobile user-agent
-                                  	or you can set your special user-agent (default "web")
-      --cookie string             Cookie to use (testA=a; testB=b)
-  -H, --header stringArray        Header to use (Use multiple flag to set multiple header)
-      --burp string               Load headers and cookie from burp raw http request
-      --blacklist string          Blacklist URL Regex
-      --whitelist string          Whitelist URL Regex
-      --whitelist-domain string   Whitelist Domain
-  -t, --threads int               Number of threads (Run sites in parallel) (default 1)
-  -c, --concurrent int            The number of the maximum allowed concurrent requests of the matching domains (default 5)
-  -d, --depth int                 MaxDepth limits the recursion depth of visited URLs. (Set it to 0 for infinite recursion) (default 1)
-  -k, --delay int                 Delay is the duration to wait before creating a new request to the matching domains (second)
-  -K, --random-delay int          RandomDelay is the extra randomized duration to wait added to Delay before creating a new request (second)
-  -m, --timeout int               Request timeout (second) (default 10)
-  -B, --base                      Disable all and only use HTML content
-      --js                        Enable linkfinder in javascript file (default true)
-      --subs                      Include subdomains
-      --sitemap                   Try to crawl sitemap.xml
-      --robots                    Try to crawl robots.txt (default true)
-  -a, --other-source              Find URLs from 3rd party (Archive.org, CommonCrawl.org, VirusTotal.com, AlienVault.com)
-  -w, --include-subs              Include subdomains crawled from 3rd party. Default is main domain
-  -r, --include-other-source      Also include other-source's urls (still crawl and request)
-      --debug                     Turn on debug mode
-      --json                      Enable JSON output
-  -v, --verbose                   Turn on verbose
-  -l, --length                    Turn on length
-  -L, --filter-length             Turn on length filter
-  -R, --raw                       Turn on raw
-  -q, --quiet                     Suppress all the output and only show URL
-      --no-redirect               Disable redirect
-      --version                   Check version
-  -h, --help                      help for gospider
-
-```
 
 
 <table align="center">
