@@ -90,7 +90,6 @@ python3 run.py -c -df path/folder/to/cloud -o output/folder/of/cloud
 
 
 
-
 <table align="center">
     <tr>
         <td align="center">
