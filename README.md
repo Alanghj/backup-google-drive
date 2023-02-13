@@ -95,7 +95,7 @@ python3 run.py -c -df path/folder/to/cloud -o output/folder/of/cloud
     <tr>
         <td align="center">
             <a href="https://github.com/Alanghj">
-                <img src="https://user-images.githubusercontent.com/81534309/218480249-255e240a-d7bc-4884-b7ac-bd9f00deb255.png" width="270px;" height="270px;" alt="Image Alanghj" />
+                <img src="https://avatars.githubusercontent.com/u/81534309?s=400&u=647f4710e89a234faa1b8e6c2097f752d558d68d&v=4" width="270px;" height="270px;" alt="Image Alanghj" />
                 <br />
                 <sub><b>Alanghj</b></sub>
             </a>
